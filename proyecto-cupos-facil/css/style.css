@@ -1,0 +1,21 @@
+:root {
+  --color-verde: #17635f;
+  --color-verde-claro: #dcebe9;
+  --color-naranja: #f4ae3d;
+  --color-azul: #a6b6e6;
+  --color-fondo: #f3f5f4;
+  --color-tinta: #1b2a2e;
+  --color-gris: #5c6b6e;
+  --color-borde: #d5dcdb;
+  --radio: 14px;
+
+}
+
+.app {
+  max-width: 420px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
