@@ -16,7 +16,6 @@
         <h1 class="cabecera__titulo" id="cabecera-titulo"></h1>
         <div class="segmentos" id="segmentos" aria-hidden="true"></div>
         </header>
-    </div>
 
     <main>
       <section class="pantalla" data-pantalla="inicio">
@@ -51,7 +50,106 @@
           </button>
           <button type="button" class="btn btn-lg boton boton--borde" id="btn-tengo-cita">Ya tengo una cita</button>
         </div>
-        </section>        
+        </section>
+
+      <section class="pantalla" data-pantalla="escaneo" hidden>
+        <div class="camara">
+          <video id="video" playsinline muted hidden></video>
+          <canvas id="lienzo" hidden></canvas>
+          <div class="camara__marco" aria-hidden="true"></div>
+          <p class="camara__aviso" id="camara-aviso" role="status"></p>
+        </div>
+
+        <div class="hoja">
+          <div class="hoja__titulo">
+            <h2>Revisa tus datos</h2>
+            <span class="chip-leido" id="chip-leido" hidden><i class="bi bi-check2"></i> Leído</span>
+          </div>
+
+          <form id="form-documento" novalidate></form>
+
+          <p class="nota">¿Algo salió mal? Toca el dato para corregirlo. Tu foto no se guarda.</p>
+
+          <div class="acciones acciones--fila">
+            <button type="button" class="btn btn-lg boton boton--borde boton--cuadrado" id="btn-camara" aria-label="Abrir cámara">
+              <i class="bi bi-camera"></i>
+            </button>
+            <button type="submit" form="form-documento" class="btn btn-lg boton boton--principal">Continuar</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="pantalla" data-pantalla="cupo" hidden>
+        <div class="contenido">
+          <div class="tarjeta">
+            <small>Según tu hoja de referencia</small>
+            <strong>Especialidad: <span data-texto="especialidad"></span></strong>
+          </div>
+
+          <h2 class="subtitulo">¿Qué día puedes venir?</h2>
+          <div class="dias" id="dias"></div>
+
+          <h2 class="subtitulo">¿A qué hora?</h2>
+          <div class="horas" id="horas"></div>
+          <p class="nota">Las horas tachadas ya no tienen cupo.</p>
+
+          <div class="tu-cita">
+            Tu cita
+            <strong data-texto="resumen-cita">Elige día y hora</strong>
+          </div>
+        </div>
+
+        <div class="acciones">
+          <button type="button" class="btn btn-lg boton boton--principal" id="btn-reservar" disabled>Reservar este cupo</button>
+        </div>
+      </section>
+
+            <section class="pantalla" data-pantalla="confirmacion" hidden>
+        <div class="exito">
+          <span class="exito__icono"><i class="bi bi-check-lg"></i></span>
+          <h1 class="titulo-grande">¡Tu cupo está reservado!</h1>
+          <p>Ya puedes viajar al hospital con tu cita asegurada.</p>
+        </div>
+
+        <div class="contenido">
+          <dl class="tarjeta detalle">
+            <dt>Día y hora</dt>
+            <dd class="detalle__destacado" data-texto="cita"></dd>
+            <dt>Especialidad</dt>
+            <dd data-texto="especialidad"></dd>
+            <dt>Paciente</dt>
+            <dd data-texto="nombre"></dd>
+            <dt>Lugar</dt>
+            <dd data-texto="lugar"></dd>
+          </dl>
+
+          <div class="tarjeta ficha">
+            <span class="ficha__pdf">PDF</span>
+            <div>
+              <strong>Ficha FUA</strong>
+              <p class="nota m-0">Ya llena. Imprímela y fírmala en ventanilla.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="acciones">
+          <button type="button" class="btn btn-lg boton boton--principal" id="btn-descargar">
+            <i class="bi bi-download"></i> Descargar mi Ficha FUA
+          </button>
+          <button type="button" class="btn btn-lg boton boton--borde" id="btn-reiniciar">Volver al inicio</button>
+        </div>
+      </section>
     </main>
+
+    <dialog class="dialogo" id="dialogo-ayuda">
+      <h2 class="h5">¿Cómo funciona?</h2>
+      <p>Toma una foto a tu DNI y a tu hoja de referencia. Revisa los datos, elige un día y una hora, y descarga tu Ficha FUA para firmarla en ventanilla.</p>
+      <form method="dialog"><button class="btn boton boton--principal">Entendido</button></form>
+    </dialog>
+    </div>
+
+  <script src="js/datos.js"></script>
+  <script src="js/servicios.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
