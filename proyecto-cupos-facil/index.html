@@ -7,15 +7,51 @@
       <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="app">
-    <header class="cabecera" id="cabecera" hidden>
-      <button type="button" class="cabecera__volver" id="btn-volver" aria-label="Volver">
-        <i class="bi bi-chevron-left"></i>
-      </button>
-      <p class="cabecera__paso" id="cabecera-paso"></p>
-      <h1 class="cabecera__titulo" id="cabecera-titulo"></h1>
-      <div class="segmentos" id="segmentos" aria-hidden="true"></div>
-    </header>
-    
+    <div class="app">
+        <header class="cabecera" id="cabecera" hidden>
+        <button type="button" class="cabecera__volver" id="btn-volver" aria-label="Volver">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+        <p class="cabecera__paso" id="cabecera-paso"></p>
+        <h1 class="cabecera__titulo" id="cabecera-titulo"></h1>
+        <div class="segmentos" id="segmentos" aria-hidden="true"></div>
+        </header>
+    </div>
+
+    <main>
+      <section class="pantalla" data-pantalla="inicio">
+        <div class="barra-superior">
+          <div class="marca">
+            <span class="marca__icono"><i class="bi bi-calendar2-check"></i></span>
+            Cupo Fácil
+          </div>
+          <button type="button" class="boton-ayuda" id="btn-ayuda" aria-label="Ayuda">
+            <i class="bi bi-question-lg"></i>
+          </button>
+        </div>
+
+        <div class="contenido">
+          <span class="etiqueta">Hospital Regional del Cusco</span>
+          <h1 class="titulo-grande">Reserva tu cupo sin hacer cola</h1>
+          <p>Solo necesitas tu DNI y tu hoja de referencia. Tómales una foto y nosotros hacemos el resto.</p>
+
+          <ol class="lista-pasos tarjeta">
+            <li><span class="lista-pasos__numero">1</span> Foto de tu DNI</li>
+            <li><span class="lista-pasos__numero">2</span> Foto de tu hoja de referencia</li>
+            <li><span class="lista-pasos__numero">3</span> Elige tu día y descarga tu FUA</li>
+          </ol>
+
+          <p class="nota">Versión de simulación: los datos que verás son de prueba.</p>
+        </div>
+
+        <div class="acciones">
+          <p class="aviso" id="aviso-inicio" role="status" hidden>Aún no tienes una cita reservada.</p>
+          <button type="button" class="btn btn-lg boton boton--principal" id="btn-empezar">
+            <i class="bi bi-camera"></i> Empezar con mi DNI
+          </button>
+          <button type="button" class="btn btn-lg boton boton--borde" id="btn-tengo-cita">Ya tengo una cita</button>
+        </div>
+        </section>        
+    </main>
 </body>
 </html>
